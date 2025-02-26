@@ -1,5 +1,5 @@
 import pytest
-from src.models.decision import Decision
+from app.models.decision import Decision
 
 def test_decision_creation():
     decision = Decision(title="项目启动", description="启动新产品开发项目")

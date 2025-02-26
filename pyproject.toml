@@ -15,6 +15,8 @@ classifiers = [
 ]
 requires-python = '>=3.10'
 dependencies = [
+    "fastapi>=0.115.8",
+    "sqlmodel>=0.0.22"
 
 ]
 # dynamic = ["version"]
@@ -29,4 +31,9 @@ distribution = false
 [tool.pdm.dev-dependencies]
 dev = [
     "pytest>=8.2.2",
+]
+
+[tool.pdm.build]
+includes = [
+    "app",
 ]

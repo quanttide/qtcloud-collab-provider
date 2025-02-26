@@ -1,14 +1,12 @@
-from pydantic import BaseModel
+import uuid
+from sqlmodel import SQLModel, Field, create_engine
 
-class TopicBase(BaseModel):
+class Topic(SQLModel, table=True):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4, primary_key=True)
     title: str
-    description: str | None = None
+    content: str | None
 
-class TopicCreate(TopicBase):
-    pass
 
-class Topic(TopicBase):
-    id: int
-
-    class Config:
-        orm_mode = True
+if __name__=="__main__":
+    engine = create_engine("sqlite:///db.sqlite", echo=True)
+    SQLModel.metadata.create_all(engine)
