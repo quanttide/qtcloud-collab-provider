@@ -1,6 +1,6 @@
 import uuid
 from sqlmodel import Session, create_engine, SQLModel
-from app.models.topic import Topic
+from src.models.topic import Topic
 
 
 def test_create_topic(session):
