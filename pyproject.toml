@@ -32,8 +32,3 @@ distribution = false
 dev = [
     "pytest>=8.2.2",
 ]
-
-[tool.pdm.build]
-includes = [
-    "app",
-]
